@@ -41,13 +41,21 @@ MAX(invoiceDate) as Data_Fatura_Recente /*Data Mais recente 31/05/2016*/
 from Sales.Invoices
 
 /*Juntando as tabelas*/
+/*'PER' + Cast(p.PersonID AS VARCHAR) ID_Pessoa,
+select InvoiceDate as Data_Fatura,
+'INV_' + Cast(InvoiceID as varchar) ID_Invoice,
+'ORD_' + Cast(OrderID AS varchar) Pedido_ID,
+'INV_'+ Cast(BillToCustomerID As varchar) Fatura_ID_Cliente,
+'SALES_' + Cast(SalespersonPersonID AS varchar) ID_Vendedor,
+'Pedido_' + Cast(CustomerPurchaseorderNumber as varchar) Numero_Pedido_Compra_Cliente
+*/
 select
 i.InvoiceDate as Data_Fatura,
-i.OrderID AS Pedido_ID,
-i.BillToCustomerID As Fatura_ID_Cliente,
-i.SalespersonPersonID AS ID_Vendedor,
-i.CustomerPurchaseorderNumber as Numero_Pedido_Compra_Cliente,
-il.StockItemID as ID_Estoque,
+'ORD_' + Cast(i.OrderID AS varchar) Pedido_ID,
+'INVC_' + Cast(i.BillToCustomerID As varchar) Fatura_ID_Cliente,
+'SALES_'+ Cast(i.SalespersonPersonID AS varchar) ID_Vendedor,
+'Pedido_' + cast(i.CustomerPurchaseorderNumber as varchar) Numero_Pedido_Compra_Cliente,
+'IDSTOCK_'+ cast(il.StockItemID as varchar) ID_Estoque,
 il.Quantity as Quantidade,
 il.UnitPrice as Preço_Unitario,
 il.TaxAmount as Montante_Imposto,
@@ -63,16 +71,16 @@ LEFT JOIN Sales.InvoiceLines il on i.InvoiceID = il.InvoiceID;
 /*Tabela de Faturas*/
 select
 i.InvoiceDate as Data_Fatura,
-'ORD' + Cast(i.OrderID AS VARCHAR) Pedido_ID,
-'ORDC' + Cast(i.BillToCustomerID As VARCHAR) Fatura_ID_Cliente,
-'VEN' + Cast(i.SalespersonPersonID AS VARCHAR) ID_Vendedor,
-'STOCK' + Cast(il.StockItemID AS VARCHAR) ID_Estoque,
-i.CustomerPurchaseorderNumber AS Numero_Pedido_Compra_Cliente,
-il.Quantity as Quantidade,
-il.UnitPrice as Preço_Unitario,
-il.TaxAmount as Montante_Imposto,
-il.LineProfit as Lucro_Linha,
-il.ExtendedPrice AS Preço_Total
+'ORD_' + Cast(i.OrderID AS VARCHAR) Pedido_ID,
+'INV_' + Cast(i.BillToCustomerID As VARCHAR) Fatura_ID_Cliente,
+'SALES_' + Cast(i.SalespersonPersonID AS VARCHAR) ID_Vendedor,
+'STOCK_' + Cast(il.StockItemID AS VARCHAR) ID_Estoque,
+	i.CustomerPurchaseorderNumber AS Numero_Pedido_Compra_Cliente,
+	il.Quantity as Quantidade,
+	il.UnitPrice as Preço_Unitario,
+	il.TaxAmount as Montante_Imposto,
+	il.LineProfit as Lucro_Linha,
+	il.ExtendedPrice AS Preço_Total
 from Sales.Invoices i
 LEFT JOIN Sales.InvoiceLines il on i.InvoiceID = il.InvoiceID;
 

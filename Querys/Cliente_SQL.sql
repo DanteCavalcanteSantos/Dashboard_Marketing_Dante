@@ -60,10 +60,7 @@ select p.ValidFrom AS Data_Registro,
 	END AS Tipo_Usuario
 from Application.People p
 	left join Application.People_Archive pa on p.PersonID = pa.PersonID
-
-
-
-
+	
 
 
 
@@ -72,25 +69,27 @@ from Application.People p
 select * from Sales.Invoices
 
 /*Colunas que utilizarei da Sales.Invoices*/
+/*'PER' + Cast(p.PersonID AS VARCHAR) ID_Pessoa, */
 select InvoiceDate as Data_Fatura,
-InvoiceID as ID_Invoice,
-OrderID AS Pedido_ID,
-BillToCustomerID As Fatura_ID_Cliente,
-SalespersonPersonID AS ID_Vendedor,
-CustomerPurchaseorderNumber as Numero_Pedido_Compra_Cliente
+'INV_' + Cast(InvoiceID as varchar) ID_Invoice,
+'ORD_' + Cast(OrderID AS varchar) Pedido_ID,
+'INV_'+ Cast(BillToCustomerID As varchar) Fatura_ID_Cliente,
+'SALES_' + Cast(SalespersonPersonID AS varchar) ID_Vendedor,
+'Pedido_' + Cast(CustomerPurchaseorderNumber as varchar) Numero_Pedido_Compra_Cliente
 From Sales.Invoices
 
 
 /*Complemento da SalesInvoices*/
 select * from Sales.InvoiceLines
 
-select InvoiceID as ID_Invoice,
-StockItemID as ID_Estoque,
-Quantity as Quantidade,
-UnitPrice as Preço_Unitario,
-TaxAmount as Montante_Imposto,
-LineProfit as Lucro_Linha,
-ExtendedPrice AS Preço_Total
-from Sales.InvoiceLines
+SELECT TOP 100
+  'INV_' + Cast(InvoiceID as varchar) ID_Invoice,
+  StockItemID AS ID_Estoque,
+  Quantity AS Quantidade,
+  UnitPrice AS Preço_Unitario,
+  TaxAmount AS Montante_Imposto,
+  LineProfit AS Lucro_Linha,
+  ExtendedPrice AS Preço_Total
+FROM Sales.InvoiceLines;
 
 
