@@ -30,3 +30,8 @@ Versão atual: 2.149.1429.0 64-bit (novembro de 2025)
 Links uteis: https://serverfault.com/questions/1142336/system-enterpriseservices-error-when-trying-to-connect-excel-or-powerbi-to-a-sql
 https://clickup.com/pt-BR/blog/474043/engajamento-com-o-conteudo
 https://convertanaweb.com.br/calculadora-de-cpc-custo-por-clique/
+https://agencianovaacao.com.br/dicionario-de-marketing/o-que-e-impressao-no-marketing-digital/
+https://www.ekyte.com/guide/pt-br/conceitos/custo-por-visita-cpv-no-marketing-digital-como-calcular-e-usar/
+https://blog.aqui.eletromidia.com.br/o-que-e-cpm/
+https://sebrae.com.br/sites/PortalSebrae/o-que-e-ctr-no-marketing-digital-e-como-melhorar,bd09941d02597810VgnVCM1000001b00320aRCRD
+https://support.google.com/analytics/answer/12159447?hl=pt-BR
