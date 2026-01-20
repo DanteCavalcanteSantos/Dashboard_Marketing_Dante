@@ -1,5 +1,6 @@
 #Projeto em Marketing Digital
 
+##KPI'S
 
 ## Erro de conexão Power Bi x SQL Server (System. EnterpriseServices)
 
@@ -35,3 +36,7 @@ https://www.ekyte.com/guide/pt-br/conceitos/custo-por-visita-cpv-no-marketing-di
 https://blog.aqui.eletromidia.com.br/o-que-e-cpm/
 https://sebrae.com.br/sites/PortalSebrae/o-que-e-ctr-no-marketing-digital-e-como-melhorar,bd09941d02597810VgnVCM1000001b00320aRCRD
 https://support.google.com/analytics/answer/12159447?hl=pt-BR
+https://www.docusign.com/pt-br/blog/ltv?msockid=2b3232bc532e6728001f261c522e6641
+https://genyo.com.br/lei-de-pareto/
+
+Lifetime value sofreu uma adaptação para marketing, pois não temos a informação "cliente", porém, temos a informação de "transações"
